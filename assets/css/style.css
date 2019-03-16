@@ -1,11 +1,15 @@
 body {
-    background-image: url(../images/BlackMarble.jpg);
+    background-image: url(https://previews.123rf.com/images/jagcz/jagcz1702/jagcz170200112/72245560-asian-food-served-on-white-wooden-table-top-view-space-for-text-chinese-and-vietnamese-cuisine-set-.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 5vh;
+    margin-top: 200px;
+    padding-top: 100px;
     color: black;
+    text-shadow: 1px 1px 0 white, -1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white, 0px 1px 0 white, 0px -1px 0 white, -1px 0px 0 white, 1px 0px 0 white, 2px 2px 0 white, -2px 2px 0 white, 2px -2px 0 white, -2px -2px 0 white, 0px 2px 0 white, 0px -2px 0 white, -2px 0px 0 white, 2px 0px 0 white, 1px 2px 0 white, -1px 2px 0 white, 1px -2px 0 white, -1px -2px 0 white, 2px 1px 0 white, -2px 1px 0 white, 2px -1px 0 white, -2px -1px 0 white;
     display: flex;
 }
+
 .container {
     margin: auto;
     text-align: center;

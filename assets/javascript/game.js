@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
-    var possibleWords = ["florence", "paris", "madrid", "rome", "singapore", "dubai", "new york city", 
-                            "shanghai", "london", "tokyo", "sydney", "toronto", "beijing", "moscow",
-                            "johannesburg", "istanbul", "warsaw", "jakarta", "kuala lumpur", "mexico city",
-                            "hong kong", "chicago", "seoul", "los angeles", "mumbai"]
+    var possibleWords = ['bulgogi', 'pizza', 'hamburger', 'cheeseburger', 'steak', 'burrito', 'taco', 'risotto', 'gyro', 'ladoo', 'udon', 'hummus', 'kasha varnishkes', 'kabash', 'kabayaki', 'macaroni', 'curried goat', 'creme brulee', 'sushi', 'robata', 'fried chicken', 'salmon', 'fesenjan', 'kebab', 'coq au vin', 'duck confit']
 
     const maxGuess = 10
     var pauseGame = false
@@ -60,7 +57,7 @@ $(document).ready(function() {
                 // Display word before reseting game
                 guessingWord = wordToMatch.split()
                 pauseGame = true
-                setTimeout(resetGame, 5000)
+                setTimeout(resetGame, 300)
             }
         }
 
