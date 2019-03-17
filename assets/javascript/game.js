@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var possibleWords = ['bulgogi', 'pizza', 'hamburger', 'cheeseburger', 'steak', 'burrito', 'taco', 'risotto', 'gyro', 'ladoo', 'udon', 'hummus', 'kasha varnishkes', 'kabash', 'kabayaki', 'macaroni', 'curried goat', 'creme brulee', 'sushi', 'robata', 'fried chicken', 'salmon', 'fesenjan', 'kebab', 'coq au vin', 'duck confit']
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
     resetGame()
 
     // Wait for key press
-    document.onkeypress = function(event) {
+    document.onkeypress = function (event) {
         // Make sure key pressed is an alpha character
         if (isAlpha(event.key) && !pauseGame) {
             checkForLetter(event.key.toUpperCase())
@@ -25,27 +25,27 @@ $(document).ready(function() {
     // Check if letter is in word & process
     function checkForLetter(letter) {
         var foundLetter = false
-        
+
 
         // Search string for letter
-        for (var i=0, j= wordToMatch.length; i<j; i++) {
+        for (var i = 0, j = wordToMatch.length; i < j; i++) {
             if (letter === wordToMatch[i]) {
                 guessingWord[i] = letter
                 foundLetter = true
-                
+
                 // If guessing word matches random word
                 if (guessingWord.join("") === wordToMatch) {
                     // Increment # of wins
                     wins++
                     pauseGame = true
                     updateDisplay()
-                    setTimeout(resetGame,5000)
+                    setTimeout(resetGame, 2500)
                 }
             }
         }
 
         if (!foundLetter) {
-            
+
             // Check if inccorrect guess is already on the list
             if (!guessedLetters.includes(letter)) {
                 // Add incorrect letter to guessed letter list
@@ -57,7 +57,7 @@ $(document).ready(function() {
                 // Display word before reseting game
                 guessingWord = wordToMatch.split()
                 pauseGame = true
-                setTimeout(resetGame, 300)
+                setTimeout(resetGame, 2500)
             }
         }
 
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
     }
     // Check in keypressed is between A-Z or a-z
-    function isAlpha (ch){
+    function isAlpha(ch) {
         return /^[A-Z]$/i.test(ch);
     }
 
@@ -82,7 +82,7 @@ $(document).ready(function() {
         guessingWord = []
 
         // Reset the guessed word
-        for (var i=0, j=wordToMatch.length; i < j; i++){
+        for (var i = 0, j = wordToMatch.length; i < j; i++) {
             // Put a space instead of an underscore between multi word "words"
             if (wordToMatch[i] === " ") {
                 guessingWord.push(" ")
@@ -95,10 +95,10 @@ $(document).ready(function() {
         updateDisplay()
     }
 
-    function updateDisplay () {
+    function updateDisplay() {
         document.getElementById("totalWins").innerText = wins
         document.getElementById("currentWord").innerText = guessingWord.join("")
         document.getElementById("remainingGuesses").innerText = numGuess
-        document.getElementById("guessedLetters").innerText =  guessedLetters.join(" ")
+        document.getElementById("guessedLetters").innerText = guessedLetters.join(" ")
     }
 })
